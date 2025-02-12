@@ -234,83 +234,31 @@ footer {
 /* Кнопки перевода */
 
 .language-selector {
-  display: flex;
-  gap: 8px;
   position: relative;
+  display: inline-flex;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 6px;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .lang-btn {
-  width: 48px;
-  height: 48px;
+  position: relative;
+  padding: 8px 20px;
   border: none;
-  border-radius: 12px;
-  background: rgba(39, 39, 39, 0.1);
-  backdrop-filter: blur(4px);
-  color: var(--light);
-  font-weight: 600;
+  border-radius: 30px;
+  background: transparent;
+  color: var(--dark);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Эффект при наведении */
-.lang-btn:hover {
-  background: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(42, 94, 232, 0.2);
-}
-
-/* Активное состояние */
-.lang-btn.active {
-  background: var(--gradient);
-  color: white;
-  box-shadow: 0 4px 16px rgba(42, 94, 232, 0.3);
-}
-
-/* Эффект клика */
-.lang-btn:active {
-  transform: scale(0.95);
-}
-
-/* Индикатор выбранного языка */
-.lang-btn.active::after {
-  content: '';
-  position: absolute;
-  bottom: 4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-}
-
-/* Анимация подчеркивания при переключении */
-@keyframes langSwitch {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
-}
-
-/* Адаптив для мобильных */
-@media (max-width: 768px) {
-  .lang-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 14px;
-  }
-  
-  .lang-btn.active::after {
-    width: 4px;
-    height: 4px;
-  }
-}
-
-/* Дополнительный hover-эффект */
 .lang-btn::before {
   content: '';
   position: absolute;
@@ -318,13 +266,44 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, 
-    rgba(255, 255, 255, 0.2) 0%, 
-    transparent 70%);
+  background: var(--gradient);
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.lang-btn:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(42, 94, 232, 0.3);
 }
 
 .lang-btn:hover::before {
   opacity: 1;
+}
+
+.lang-btn[data-lang].active {
+  color: white;
+  background: var(--gradient);
+  box-shadow: 0 4px 15px rgba(42, 94, 232, 0.3);
+}
+
+/* Индикатор текущего языка (опционально) */
+.lang-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: var(--secondary);
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,77,121,0.5); }
+  70% { box-shadow: 0 0 0 6px rgba(255,77,121,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,77,121,0); }
 }
