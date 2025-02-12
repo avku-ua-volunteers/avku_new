@@ -1,153 +1,330 @@
-/* Сброс стилей и базовые настройки */
+:root {
+  --primary: #2A5EE8; /* Современный синий */
+  --secondary: #fcff4d; /* Розовый акцент */
+  --dark: #0F172A;
+  --light: #F8FAFC;
+  --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+/* Базовые настройки */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    font-family: 'Roboto', sans-serif;
-    background: #fff;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  /* Контейнер для выравнивания */
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* Стили навигации */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #003366; /* Темно-синий */
-    color: #fff;
-    padding: 10px 20px;
-    position: relative;
-  }
-  
-  .navbar .logo a {
-    color: #fff;
-    font-size: 24px;
-    text-decoration: none;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.7;
+}
+
+/* Контейнер с ограничением по ширине */
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Стеклянная навигация */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Анимированный гамбургер */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: var(--dark);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Герой-секция с градиентом */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--gradient);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Модернизированные кнопки */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  border: 2px solid transparent;
+  color: rgb(254, 255, 188);
+}
+
+.btn-primary {
+  background: white;
+  color: var(--primary);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Карточки с hover-эффектом */
+.news-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.news-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.news-item:hover {
+  transform: translateY(-10px);
+}
+
+/* Футер с сеткой */
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 4rem 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
   .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-  /* Hamburger для мобильной версии */
-  .hamburger {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    background: white;
     flex-direction: column;
-    cursor: pointer;
+    padding: 6rem 2rem;
+    transition: right 0.3s ease;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content > * {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+
+/* Кнопки перевода */
+
+.language-selector {
+  display: flex;
+  gap: 8px;
+  position: relative;
+}
+
+.lang-btn {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(39, 39, 39, 0.1);
+  backdrop-filter: blur(4px);
+  color: var(--light);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Эффект при наведении */
+.lang-btn:hover {
+  background: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(42, 94, 232, 0.2);
+}
+
+/* Активное состояние */
+.lang-btn.active {
+  background: var(--gradient);
+  color: white;
+  box-shadow: 0 4px 16px rgba(42, 94, 232, 0.3);
+}
+
+/* Эффект клика */
+.lang-btn:active {
+  transform: scale(0.95);
+}
+
+/* Индикатор выбранного языка */
+.lang-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* Анимация подчеркивания при переключении */
+@keyframes langSwitch {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+  .lang-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
   }
   
-  .hamburger span {
-    height: 3px;
-    width: 25px;
-    background: #fff;
-    margin-bottom: 4px;
-    border-radius: 5px;
+  .lang-btn.active::after {
+    width: 4px;
+    height: 4px;
   }
-  
-  /* Hero-секция */
-  .hero {
-    background: url('../images/hero-bg.jpg') center/cover no-repeat;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
-    padding: 0 20px;
-  }
-  
-  .hero-content h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-  }
-  
-  .hero-content p {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .btn {
-    background: #FFD700; /* Золотой оттенок */
-    color: #003366;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-  }
-  
-  /* Секция обзора */
-  .overview {
-    padding: 40px 0;
-    background: #f4f4f4;
-    text-align: center;
-  }
-  
-  /* Секция новостей */
-  .news {
-    padding: 40px 0;
-  }
-  
-  .news-items {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .news-item {
-    background: #fff;
-    padding: 20px;
-    flex: 1;
-    min-width: 250px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  /* Футер */
-  footer {
-    background: #003366;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-  }
-  
-  /* Мобильная версия */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      background: #003366;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      width: 200px;
-    }
-    .nav-links.active {
-      display: flex;
-    }
-    .hamburger {
-      display: flex;
-    }
-    .news-items {
-      flex-direction: column;
-    }
-  }
-  
+}
+
+/* Дополнительный hover-эффект */
+.lang-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, 
+    rgba(255, 255, 255, 0.2) 0%, 
+    transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lang-btn:hover::before {
+  opacity: 1;
+}

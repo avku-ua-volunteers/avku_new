@@ -1,0 +1,23 @@
+{
+    "page_title": "AVKU - Home",
+    "nav_home": "Home",
+    "nav_about": "About Us",
+    "nav_news": "News",
+    "nav_events": "Events",
+    "nav_gallery": "Gallery",
+    "nav_contacts": "Contacts",
+    "hero_header": "Welcome to AVKU",
+    "hero_text": "Uniting volunteers to support Ukraine",
+    "hero_btn": "Learn More",
+    "overview_header": "Our Activities",
+    "overview_text": "A brief description of the mission, goals, and projects...",
+    "news_header": "Latest News",
+    "news_item_1_title": "News 1",
+    "news_item_1_text": "A short description of the news...",
+    "news_item_1_link": "Read more",
+    "news_item_2_title": "News 2",
+    "news_item_2_text": "A short description of the news...",
+    "news_item_2_link": "Read more",
+    "footer_text": "© 2025 AVKU. All rights reserved."
+  }
+  
