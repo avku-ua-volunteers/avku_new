@@ -49,10 +49,3 @@ function applyTranslations(translations) {
     }
   });
 }
-document.querySelectorAll('.lang-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
-    // Логика смены языка
-  });
-});
