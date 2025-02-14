@@ -418,6 +418,9 @@
     mix-blend-mode: multiply;
     background: rgba(255,255,255,0.1);
   }
+  .map h2 {
+    text-align: center;
+  }
   
   /* ==========================================
      Страница контактов
