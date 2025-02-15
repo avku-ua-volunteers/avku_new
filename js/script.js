@@ -58,3 +58,37 @@ function applyTranslations(translations) {
     }
   });
 }
+
+
+
+
+/*Для работы галереи*/
+
+document.querySelectorAll('.gallery-item img').forEach(img => {
+  img.addEventListener('click', function() {
+    const modal = document.querySelector('.gallery-modal');
+    const modalImg = modal.querySelector('.modal-content');
+    const caption = modal.querySelector('.modal-caption');
+    
+    modal.style.display = 'block';
+    modalImg.src = this.src;
+    caption.textContent = this.parentElement.querySelector('figcaption').textContent;
+  });
+});
+
+document.querySelector('.modal-close').addEventListener('click', () => {
+  document.querySelector('.gallery-modal').style.display = 'none';
+});
+
+// Фильтрация
+document.querySelectorAll('.btn-filter').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    
+    const filter = this.dataset.filter;
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.style.display = filter === 'all' || item.classList.contains(filter) ? 'block' : 'none';
+    });
+  });
+});

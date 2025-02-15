@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header и навигация -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">АВКУ</a>
+            </div>
+
+            <!-- Блок переключения языка -->
+            <div class="language-selector">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="uk">UA</button>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" data-translate="nav_home">Головна</a></li>
+                <li><a href="about.html" data-translate="nav_about">Про нас</a></li>
+                <li><a href="news.html" data-translate="nav_news">Новини</a></li>
+                <li><a href="events.html" data-translate="nav_events">Заходи</a></li>
+                <li><a href="gallery.html" data-translate="nav_gallery">Галерея</a></li>
+                <li><a href="contacts.html" data-translate="nav_contacts">Контакти</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+   <!-- Основной контент -->
+   <main class="gallery-page">
+    <section class="gallery-section">
+        <div class="container">
+            <h1 class="section-title">Наша галерея</h1>
+            
+            <!-- Фильтры -->
+            <div class="gallery-filters">
+                <button class="btn btn-filter active" data-filter="all">Всі</button>
+                <button class="btn btn-filter" data-filter="events">Заходи</button>
+                <button class="btn btn-filter" data-filter="campus">Кампус</button>
+                <button class="btn btn-filter" data-filter="students">Студенти</button>
+            </div>
+
+            <!-- Сетка галереи -->
+            <div class="gallery-grid">
+                <!-- Изображение 1 -->
+                <div class="gallery-item card events">
+                    <figure>
+                        <img src="images/gallery1.jpg" alt="Науковий захід" loading="lazy">
+                        <figcaption class="gallery-caption">Щорічна наукова конференція</figcaption>
+                    </figure>
+                </div>
+
+                <!-- Изображение 2 -->
+                <div class="gallery-item card campus">
+                    <figure>
+                        <img src="images/gallery2.jpg" alt="Бібліотека" loading="lazy">
+                        <figcaption class="gallery-caption">Нова бібліотека</figcaption>
+                    </figure>
+                </div>
+
+                <!-- Изображение 3 -->
+                <div class="gallery-item card students">
+                    <figure>
+                        <img src="images/gallery3.jpg" alt="Студентське життя" loading="lazy">
+                        <figcaption class="gallery-caption">Студентський актив</figcaption>
+                    </figure>
+                </div>
+
+                <!-- Добавьте больше изображений по аналогии -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно -->
+    <div class="gallery-modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div class="modal-caption"></div>
+    </div>
+</main>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Галерея. Все права защищены.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
