@@ -9,25 +9,33 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7U6N8v5L1cT8fH5bbAd6ZZRhZ7M9cIklE6edJ7dW0B0xVfV9+Z9TZ6X6w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+<!-- Header и навигация -->
   <header>
     <nav class="navbar">
-      <div class="logo">
-         <a href="index.html">АВКУ</a>
-      </div>
-      <ul class="nav-links">
-         <li><a href="index.html">Главная</a></li>
-         <li><a href="about.html">О нас</a></li>
-         <li><a href="news.html">Новости</a></li>
-         <li><a href="events.html">Мероприятия</a></li>
-         <li><a href="gallery.html">Галерея</a></li>
-         <li><a href="contacts.html">Контакты</a></li>
-      </ul>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
+        <div class="logo">
+           <a href="index.html">АВКУ</a>
+        </div>
+
+       <!-- Блок переключения языка -->
+        <div class="language-selector">
+            <button class="lang-btn" data-lang="en">EN</button>
+           <button class="lang-btn" data-lang="uk">UA</button>
+        </div>
+
+       <ul class="nav-links">
+            <li><a href="index.html" data-translate="nav_home">Головна</a></li>
+            <li><a href="about.html" data-translate="nav_about">Про нас</a></li>
+            <li><a href="news.html" data-translate="nav_news">Новини</a></li>
+            <li><a href="events.html" data-translate="nav_events">Заходи</a></li>
+           <li><a href="gallery.html" data-translate="nav_gallery">Галерея</a></li>
+            <li><a href="contacts.html" data-translate="nav_contacts">Контакти</a></li>
+        </ul>
+       <div class="hamburger">
+           <span></span>
+           <span></span>
+            <span></span>
+        </div>
+   </nav>
   </header>
 
   <main class="container">
