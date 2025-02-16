@@ -1,4 +1,4 @@
-/***********************************************************
+/*********************************************************** 
  * 1. Переключение языка + локальное хранилище
  **********************************************************/
 document.addEventListener("DOMContentLoaded", () => {
@@ -132,6 +132,7 @@ function updateGallery() {
 
 /**
  * Генерация кнопок пагинации с кнопками "Предыдущая страница" и "Следующая страница"
+ * Показывается максимум 7 кнопок с номерами страниц.
  */
 function renderPagination() {
   const container = document.querySelector('.pagination-inner');
@@ -139,7 +140,7 @@ function renderPagination() {
 
   container.innerHTML = '';
 
-  // Если страниц меньше 2, можно не отображать пагинацию
+  // Если страниц меньше 2, пагинация не нужна
   if (totalPages <= 1) {
     return;
   }
@@ -157,8 +158,24 @@ function renderPagination() {
   });
   container.appendChild(prevButton);
 
+  // Определяем диапазон страниц, которые будут показаны (максимум 7)
+  let startPage = 1;
+  let endPage = totalPages;
+  if (totalPages > 7) {
+    if (currentPage <= 4) {
+      startPage = 1;
+      endPage = 7;
+    } else if (currentPage + 3 >= totalPages) {
+      startPage = totalPages - 6;
+      endPage = totalPages;
+    } else {
+      startPage = currentPage - 3;
+      endPage = currentPage + 3;
+    }
+  }
+
   // Кнопки с номерами страниц
-  for (let i = 1; i <= totalPages; i++) {
+  for (let i = startPage; i <= endPage; i++) {
     const button = document.createElement('button');
     button.className = `page-link ${i === currentPage ? 'active' : ''}`;
     button.textContent = i;

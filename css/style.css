@@ -894,6 +894,30 @@
   }
 }
 
+/* Стили для пагинации */
+.pagination-inner {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination-inner .page-link {
+  margin: 0 5px; /* Расстояние между кнопками */
+  padding: 6px 12px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.pagination-inner .page-link.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.pagination-inner .page-link:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 
 
   /* Стили страницы мероприятий */
