@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <title data-translate="page_title">АВКУ - Заходи</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <!-- Такая же навигация как на главной -->
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="events-page">
+        <section class="events-section">
+            <div class="container">
+                <h1 class="section-title">Майбутні заходи</h1>
+                
+                <!-- Фильтры -->
+                <div class="events-filters">
+                    <div class="filter-group">
+                        <label for="category">Категорія:</label>
+                        <select id="category" class="filter-select">
+                            <option value="all">Всі</option>
+                            <option value="lecture">Лекції</option>
+                            <option value="workshop">Майстер-класи</option>
+                            <option value="conference">Конференції</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Сетка мероприятий -->
+                <div class="events-grid">
+                    <!-- Мероприятие 1 -->
+                    <article class="card event-card">
+                        <div class="event-header">
+                            <span class="event-category lecture">Лекція</span>
+                            <time class="event-date">
+                                <i class="far fa-calendar-alt"></i>
+                                25 Жовтня 2024 | 14:00
+                            </time>
+                        </div>
+                        <div class="event-image">
+                            <img src="images/event1.jpg" alt="Наукова лекція">
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Сучасні технології в освіті</h3>
+                            <div class="event-meta">
+                                <span class="event-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Ауд. 301, Головний корпус
+                                </span>
+                            </div>
+                            <p class="event-description">Обговорення новітніх освітніх технологій та їх впровадження у навчальний процес.</p>
+                            <div class="event-actions">
+                                <a href="#" class="btn btn-primary">
+                                    Зареєструватись
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <span class="event-price">Безкоштовно</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Мероприятие 2 -->
+                    <article class="card event-card">
+                        <div class="event-header">
+                            <span class="event-category workshop">Майстер-клас</span>
+                            <time class="event-date">
+                                <i class="far fa-calendar-alt"></i>
+                                28 Жовтня 2024 | 10:00
+                            </time>
+                        </div>
+                        <div class="event-image">
+                            <img src="images/event2.jpg" alt="Майстер-клас">
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Робота з 3D-друком</h3>
+                            <div class="event-meta">
+                                <span class="event-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Лабораторія інновацій
+                                </span>
+                            </div>
+                            <p class="event-description">Практичний майстер-клас з роботи з 3D-принтерами та моделювання.</p>
+                            <div class="event-actions">
+                                <a href="#" class="btn btn-primary">
+                                    Зареєструватись
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <span class="event-price">500 грн</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <!-- Такой же футер как на главной -->
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
