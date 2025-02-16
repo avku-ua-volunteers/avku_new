@@ -81,7 +81,7 @@ let activeFilter = 'all';
  *  - запускаем первый рендер
  */
 function initGallery() {
-  // Когда нажимаем на кнопку-фильтр:
+  // При клике на кнопку-фильтр:
   document.querySelectorAll('.btn-filter').forEach(button => {
     button.addEventListener('click', () => {
       // Меняем фильтр
@@ -90,13 +90,13 @@ function initGallery() {
       currentPage = 1;
       // Обновляем галерею
       updateGallery();
-      // Подсветка активной кнопки (если нужно)
+      // Подсвечиваем активную кнопку
       document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
       button.classList.add('active');
     });
   });
 
-  // Запускаем первичный рендер
+  // Первичный рендер
   updateGallery();
 }
 
@@ -114,7 +114,7 @@ function updateGallery() {
   // Считаем общее кол-во страниц
   totalPages = Math.ceil(filteredItems.length / itemsPerPage);
 
-  // Скрываем все
+  // Скрываем все элементы
   allItems.forEach(item => {
     item.style.display = 'none';
   });
@@ -131,19 +131,33 @@ function updateGallery() {
 }
 
 /**
- * Генерация кнопок пагинации
+ * Генерация кнопок пагинации с кнопками "Предыдущая страница" и "Следующая страница"
  */
 function renderPagination() {
   const container = document.querySelector('.pagination-inner');
-  if (!container) return; // Если блока пагинации нет на странице
+  if (!container) return; // Если блока пагинации нет
 
   container.innerHTML = '';
 
-  // Если страниц меньше 2, можно спрятать блок пагинации
+  // Если страниц меньше 2, можно не отображать пагинацию
   if (totalPages <= 1) {
     return;
   }
 
+  // Кнопка "Предыдущая страница"
+  const prevButton = document.createElement('button');
+  prevButton.className = 'page-link prev-page';
+  prevButton.textContent = '<';
+  prevButton.disabled = (currentPage === 1);
+  prevButton.addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage--;
+      updateGallery();
+    }
+  });
+  container.appendChild(prevButton);
+
+  // Кнопки с номерами страниц
   for (let i = 1; i <= totalPages; i++) {
     const button = document.createElement('button');
     button.className = `page-link ${i === currentPage ? 'active' : ''}`;
@@ -154,6 +168,19 @@ function renderPagination() {
     });
     container.appendChild(button);
   }
+
+  // Кнопка "Следующая страница"
+  const nextButton = document.createElement('button');
+  nextButton.className = 'page-link next-page';
+  nextButton.textContent = '>';
+  nextButton.disabled = (currentPage === totalPages);
+  nextButton.addEventListener('click', () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      updateGallery();
+    }
+  });
+  container.appendChild(nextButton);
 }
 
 /***********************************************************
@@ -164,18 +191,17 @@ function renderPagination() {
  */
 function setupModal() {
   const modal = document.querySelector('.gallery-modal');
-  if (!modal) return; // Если у вас нет модального окна на странице
+  if (!modal) return; // Если модальное окно отсутствует
 
   const modalClose = modal.querySelector('.modal-close');
   const modalImg = modal.querySelector('#modal-image');
   const modalCaption = modal.querySelector('.modal-caption');
 
-  // Клик по каждому изображению в галерее
+  // Открытие модального окна по клику на изображение
   document.querySelectorAll('.gallery-item img').forEach(img => {
     img.addEventListener('click', () => {
       modal.style.display = 'block';
       modalImg.src = img.src;
-
       // Ищем подпись внутри <figure> → <figcaption>, если есть
       const fig = img.closest('figure');
       if (fig) {
@@ -187,14 +213,14 @@ function setupModal() {
     });
   });
 
-  // Закрытие модалки по клику на крестик
+  // Закрытие модального окна по клику на крестик
   if (modalClose) {
     modalClose.addEventListener('click', () => {
       modal.style.display = 'none';
     });
   }
 
-  // Закрытие модалки по клику вне картинки (дополнительно)
+  // Закрытие модального окна по клику вне изображения
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
       modal.style.display = 'none';
