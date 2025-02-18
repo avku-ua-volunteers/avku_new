@@ -130,10 +130,6 @@ function updateGallery() {
   renderPagination();
 }
 
-/**
- * Генерация кнопок пагинации с кнопками "Предыдущая страница" и "Следующая страница"
- * Показывается максимум 5 кнопок с номерами страниц.
- */
 function renderPagination() {
   const container = document.querySelector('.pagination-inner');
   if (!container) return; // Если блока пагинации нет
@@ -158,19 +154,26 @@ function renderPagination() {
   });
   container.appendChild(prevButton);
 
-  // Определяем диапазон страниц, которые будут показаны (максимум 5)
-  let startPage = 1;
-  let endPage = totalPages;
-  if (totalPages > 5) {
-    if (currentPage <= 4) {
+  // Максимальное количество кнопок с номерами страниц
+  const maxButtons = 5;
+  let startPage, endPage;
+
+  if (totalPages <= maxButtons) {
+    startPage = 1;
+    endPage = totalPages;
+  } else {
+    const half = Math.floor(maxButtons / 2);
+    startPage = currentPage - half;
+    endPage = currentPage + half;
+
+    // Корректировка, если диапазон выходит за пределы допустимых значений
+    if (startPage < 1) {
       startPage = 1;
-      endPage = 5;
-    } else if (currentPage + 3 >= totalPages) {
-      startPage = totalPages - 6;
+      endPage = maxButtons;
+    }
+    if (endPage > totalPages) {
       endPage = totalPages;
-    } else {
-      startPage = currentPage - 3;
-      endPage = currentPage + 3;
+      startPage = totalPages - maxButtons + 1;
     }
   }
 
@@ -199,6 +202,7 @@ function renderPagination() {
   });
   container.appendChild(nextButton);
 }
+
 
 /***********************************************************
  * 3. Модальное окно (просмотр изображений)
