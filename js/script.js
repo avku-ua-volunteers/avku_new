@@ -132,7 +132,7 @@ function updateGallery() {
 
 /**
  * Генерация кнопок пагинации с кнопками "Предыдущая страница" и "Следующая страница"
- * Показывается максимум 7 кнопок с номерами страниц.
+ * Показывается максимум 5 кнопок с номерами страниц.
  */
 function renderPagination() {
   const container = document.querySelector('.pagination-inner');
@@ -158,13 +158,13 @@ function renderPagination() {
   });
   container.appendChild(prevButton);
 
-  // Определяем диапазон страниц, которые будут показаны (максимум 7)
+  // Определяем диапазон страниц, которые будут показаны (максимум 5)
   let startPage = 1;
   let endPage = totalPages;
-  if (totalPages > 7) {
+  if (totalPages > 5) {
     if (currentPage <= 4) {
       startPage = 1;
-      endPage = 7;
+      endPage = 5;
     } else if (currentPage + 3 >= totalPages) {
       startPage = totalPages - 6;
       endPage = totalPages;
