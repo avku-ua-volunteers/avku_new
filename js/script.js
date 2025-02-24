@@ -1,12 +1,12 @@
 /*********************************************************** 
- * 1. Переключение языка + локальное хранилище
+ * 1. Language switching + local storage
  **********************************************************/
 document.addEventListener("DOMContentLoaded", () => {
-  // Если язык уже выбран ранее, берем его из localStorage, иначе по умолчанию "en"
+  // Get the previously selected language from localStorage, or default to "en"
   const savedLang = localStorage.getItem("selectedLanguage") || "en";
   loadLanguage(savedLang);
 
-  // Обработчик клика по кнопкам смены языка
+  // Add click handlers to language switch buttons
   document.querySelectorAll(".lang-btn").forEach(button => {
     button.addEventListener("click", () => {
       const lang = button.getAttribute("data-lang");
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Обработчик клика по гамбургеру (меню)
+  // Hamburger menu click handler
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
   hamburger.addEventListener("click", () => {
@@ -22,40 +22,40 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.classList.toggle("active");
   });
 
-  // После инициализации языка и меню — запускаем галерею
+  // Initialize the gallery after language and menu setup
   initGallery();
 
-  // Настраиваем модальное окно (один раз)
+  // Set up the modal (once)
   setupModal();
 });
 
 /**
- * Загружает JSON-файл с переводами для выбранного языка
- * @param {string} lang - код языка ("en" или "uk")
+ * Loads the JSON file with translations for the selected language
+ * @param {string} lang - language code ("en" or "uk")
  */
 function loadLanguage(lang) {
   fetch(`lang/${lang}.json`)
     .then(response => {
       if (!response.ok) {
-        throw new Error("Ошибка загрузки файла перевода");
+        throw new Error("Error loading translation file");
       }
       return response.json();
     })
     .then(data => {
       applyTranslations(data);
-      // Меняем заголовок страницы (если в JSON есть key page_title)
+      // Change the page title if "page_title" exists in the JSON
       document.title = data.page_title || document.title;
-      // Сохраняем выбранный язык в localStorage
+      // Save the selected language to localStorage
       localStorage.setItem("selectedLanguage", lang);
     })
     .catch(error => {
-      console.error("Ошибка при загрузке перевода:", error);
+      console.error("Error loading translation:", error);
     });
 }
 
 /**
- * Применяет переводы из объекта translations ко всем элементам с data-translate
- * @param {Object} translations - объект с переводами
+ * Applies translations from the translations object to all elements with data-translate
+ * @param {Object} translations - object with translations
  */
 function applyTranslations(translations) {
   document.querySelectorAll("[data-translate]").forEach(elem => {
@@ -65,7 +65,6 @@ function applyTranslations(translations) {
     }
   });
 }
-
 /***********************************************************
  * 2. Логика галереи: фильтрация + пагинация
  **********************************************************/
