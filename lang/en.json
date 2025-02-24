@@ -1,13 +1,13 @@
 {
    "Association" : "AVTU",
-    "page_title": "AVKU - Home",
+    "page_title": "AVTU - Home",
     "nav_home": "Home",
     "nav_about": "About Us",
     "nav_news": "News",
     "nav_events": "Events",
     "nav_gallery": "Gallery",
     "nav_contacts": "Contacts",
-    "hero_header": "Welcome to AVKU",
+    "hero_header": "Welcome to AVTU",
     "hero_text": "Uniting volunteers to support Ukraine",
     "hero_btn": "Learn More",
     "overview_header": "Our Activities",
@@ -19,6 +19,6 @@
     "news_item_2_title": "News 2",
     "news_item_2_text": "A short description of the news...",
     "news_item_2_link": "Read more",
-    "footer_text": "© 2025 AVKU. All rights reserved."
+    "footer_text": "© 2025 AVTU. All rights reserved."
   }
   
