@@ -1,6 +1,6 @@
-/*********************************************************** 
+/**
  * 1. Language switching + local storage
- **********************************************************/
+**/
 document.addEventListener("DOMContentLoaded", () => {
   // Get the previously selected language from localStorage, or default to "en"
   const savedLang = localStorage.getItem("selectedLanguage") || "en";
@@ -65,9 +65,9 @@ function applyTranslations(translations) {
     }
   });
 }
-/***********************************************************
- * 2. Логика галереи: фильтрация + пагинация
- **********************************************************/
+/**
+ 2. Логика галереи: фильтрация + пагинация
+**/
 // Конфигурация
 const itemsPerPage = 9; // Количество фото на странице
 let currentPage = 1;
@@ -203,9 +203,9 @@ function renderPagination() {
 }
 
 
-/***********************************************************
+/*******************************************************
  * 3. Модальное окно (просмотр изображений)
- **********************************************************/
+**/
 /**
  * Настройка модального окна: навешиваем обработчики кликов на изображения и на кнопку закрытия
  */
@@ -247,3 +247,213 @@ function setupModal() {
     }
   });
 }
+
+
+/**
+ * Функционал для страницы публикаций
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    // Фильтрация публикаций по категориям
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const publications = document.querySelectorAll('.publication-card');
+    
+    // Добавляем обработчики событий для кнопок фильтрации
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Удаляем класс active у всех кнопок
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Добавляем класс active нажатой кнопке
+            this.classList.add('active');
+            
+            const filter = this.dataset.filter;
+            
+            // Фильтруем публикации
+            publications.forEach(publication => {
+                if (filter === 'all' || publication.dataset.category === filter) {
+                    publication.style.display = '';
+                } else {
+                    publication.style.display = 'none';
+                }
+            });
+        });
+    });
+    
+    // Поиск публикаций по тексту
+    const searchInput = document.getElementById('publicationSearch');
+    
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        
+        publications.forEach(publication => {
+            const title = publication.querySelector('.publication-title').textContent.toLowerCase();
+            const description = publication.querySelector('.publication-description').textContent.toLowerCase();
+            
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                publication.style.display = '';
+            } else {
+                publication.style.display = 'none';
+            }
+        });
+    });
+    
+    // Если есть активные фильтры из URL или других источников,
+    // можно активировать их здесь при загрузке страницы
+    function initializeFilters() {
+        // Пример: получение параметра из URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoryParam = urlParams.get('category');
+        
+        if (categoryParam) {
+            const targetButton = document.querySelector(`.filter-btn[data-filter="${categoryParam}"]`);
+            if (targetButton) {
+                targetButton.click();
+            }
+        }
+    }
+    
+    // Инициализация фильтров
+    initializeFilters();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Функционал для страницы публикаций
+ */
+/**
+ * Функционал для страницы публикаций
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  // Фильтрация публикаций по категориям
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const publications = document.querySelectorAll('.publication-card');
+  
+  // Добавляем обработчики событий для кнопок фильтрации
+  filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+          // Удаляем класс active у всех кнопок
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Добавляем класс active нажатой кнопке
+          this.classList.add('active');
+          
+          const filter = this.dataset.filter;
+          
+          // Фильтруем публикации
+          publications.forEach(publication => {
+              if (filter === 'all' || publication.dataset.category === filter) {
+                  publication.style.display = '';
+              } else {
+                  publication.style.display = 'none';
+              }
+          });
+      });
+  });
+  
+  // Поиск публикаций по тексту
+  const searchInput = document.getElementById('publicationSearch');
+  
+  searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      
+      publications.forEach(publication => {
+          const title = publication.querySelector('.publication-title').textContent.toLowerCase();
+          const description = publication.querySelector('.publication-description').textContent.toLowerCase();
+          
+          if (title.includes(searchTerm) || description.includes(searchTerm)) {
+              publication.style.display = '';
+          } else {
+              publication.style.display = 'none';
+          }
+      });
+  });
+  
+  // Функционал просмотра PDF
+  const modal = document.getElementById('pdfPreviewModal');
+  const pdfViewer = document.getElementById('pdfViewer');
+  const modalTitle = document.getElementById('pdfModalTitle');
+  const downloadBtn = document.getElementById('downloadPdfBtn');
+  const closeBtn = document.getElementById('closePdfModal');
+  const previewButtons = document.querySelectorAll('.publication-preview-btn');
+  
+  // Открытие модального окна для просмотра PDF
+  previewButtons.forEach(button => {
+      button.addEventListener('click', function() {
+          const pdfUrl = this.dataset.pdf;
+          const pdfTitle = this.dataset.title;
+          
+          // Устанавливаем URL PDF в iframe
+          pdfViewer.src = pdfUrl;
+          
+          // Устанавливаем заголовок модального окна
+          modalTitle.textContent = pdfTitle;
+          
+          // Устанавливаем URL для кнопки скачивания
+          downloadBtn.addEventListener('click', function() {
+              // Создаем временную ссылку для скачивания
+              const tempLink = document.createElement('a');
+              tempLink.href = pdfUrl;
+              tempLink.download = pdfUrl.split('/').pop();
+              document.body.appendChild(tempLink);
+              tempLink.click();
+              document.body.removeChild(tempLink);
+          });
+          
+          // Отображаем модальное окно
+          modal.style.display = 'block';
+          
+          // Запрещаем прокрутку страницы
+          document.body.style.overflow = 'hidden';
+      });
+  });
+  
+  // Закрытие модального окна
+  closeBtn.addEventListener('click', closeModal);
+  
+  // Закрытие модального окна при клике вне content
+  modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+          closeModal();
+      }
+  });
+  
+  // Закрытие модального окна по клавише Escape
+  document.addEventListener('keyup', function(e) {
+      if (e.key === 'Escape' && modal.style.display === 'block') {
+          closeModal();
+      }
+  });
+  
+  function closeModal() {
+      modal.style.display = 'none';
+      pdfViewer.src = '';
+      document.body.style.overflow = '';
+  }
+  
+  // Если есть активные фильтры из URL или других источников,
+  // можно активировать их здесь при загрузке страницы
+  function initializeFilters() {
+      // Пример: получение параметра из URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const categoryParam = urlParams.get('category');
+      
+      if (categoryParam) {
+          const targetButton = document.querySelector(`.filter-btn[data-filter="${categoryParam}"]`);
+          if (targetButton) {
+              targetButton.click();
+          }
+      }
+  }
+  
+  // Инициализация фильтров
+  initializeFilters();
+});

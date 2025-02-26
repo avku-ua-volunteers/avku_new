@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <title data-translate="page_title">АВКУ - Публікації</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/publications.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Иконки -->
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Header и навигация -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">АВКУ</a>
+            </div>
+
+            <!-- Блок переключения языка -->
+            <div class="language-selector">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="uk">UA</button>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" data-translate="nav_home">Головна</a></li>
+                <li><a href="about.html" data-translate="nav_about">Про нас</a></li>
+                <li><a href="news.html" data-translate="nav_news">Новини</a></li>
+                <li><a href="events.html" data-translate="nav_events">Заходи</a></li>
+                <li><a href="gallery.html" data-translate="nav_gallery">Галерея</a></li>
+                <li><a href="contacts.html" data-translate="nav_contacts">Контакти</a></li>
+                <li><a href="publications.html" data-translate="nav_publications">Публікації</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Модальное окно для просмотра PDF -->
+    <div id="pdfPreviewModal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <h3 id="pdfModalTitle">Перегляд документу</h3>
+                <div class="pdf-modal-actions">
+                    <button id="downloadPdfBtn" class="pdf-action-btn" data-translate="modal_download">
+                        <i class="fas fa-download"></i> Завантажити
+                    </button>
+                    <button id="closePdfModal" class="pdf-action-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="pdf-modal-body">
+                <iframe id="pdfViewer" src="" width="100%" height="100%" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основной контент -->
+    <main class="publications-page">
+        <div class="publications-container">
+            <h1 class="publications-title" data-translate="publications_title">Публікації</h1>
+            
+            <!-- Поиск публикаций -->
+            <div class="publications-search">
+                <input type="text" class="search-input" id="publicationSearch" placeholder="Пошук публікацій..." data-translate="search_placeholder">
+            </div>
+            
+            <!-- Фильтр публикаций -->
+            <div class="publications-filter">
+                <button class="filter-btn active" data-filter="all" data-translate="filter_all">Всі</button>
+                <button class="filter-btn" data-filter="reports" data-translate="filter_reports">Звіти</button>
+                <button class="filter-btn" data-filter="research" data-translate="filter_research">Дослідження</button>
+                <button class="filter-btn" data-filter="guidelines" data-translate="filter_guidelines">Керівництва</button>
+            </div>
+            
+            <!-- Сетка публикаций -->
+            <div class="publications-grid">
+                <!-- Публикация 1 -->
+                <div class="publication-card" data-category="reports">
+                    <div class="publication-thumbnail">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="publication-info">
+                        <h3 class="publication-title" data-translate="pub1_title">Річний звіт АВКУ 2024</h3>
+                        <div class="publication-date" data-translate="pub1_date">Грудень 2024</div>
+                        <p class="publication-description" data-translate="pub1_desc">Підсумковий звіт діяльності асоціації за 2024 рік, включаючи проведені заходи та досягнення.</p>
+                        <div class="publication-actions">
+                            <button class="publication-preview-btn" data-pdf="publications/report_2024.pdf" data-title="Річний звіт АВКУ 2024" data-translate="preview_btn">
+                                <i class="fas fa-eye"></i> Переглянути
+                            </button>
+                            <a href="publications/report_2024.pdf" class="publication-download-btn" download data-translate="download_btn">
+                                <i class="fas fa-download"></i> Завантажити
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Публикация 2 -->
+                <div class="publication-card" data-category="research">
+                    <div class="publication-thumbnail">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="publication-info">
+                        <h3 class="publication-title" data-translate="pub2_title">Дослідження актуальних проблем водопостачання</h3>
+                        <div class="publication-date" data-translate="pub2_date">Жовтень 2024</div>
+                        <p class="publication-description" data-translate="pub2_desc">Аналітичне дослідження проблем водопостачання в умовах сучасних викликів.</p>
+                        <div class="publication-actions">
+                            <button class="publication-preview-btn" data-pdf="publications/water_research.pdf" data-title="Дослідження актуальних проблем водопостачання" data-translate="preview_btn">
+                                <i class="fas fa-eye"></i> Переглянути
+                            </button>
+                            <a href="publications/water_research.pdf" class="publication-download-btn" download data-translate="download_btn">
+                                <i class="fas fa-download"></i> Завантажити
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Публикация 3 -->
+                <div class="publication-card" data-category="guidelines">
+                    <div class="publication-thumbnail">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="publication-info">
+                        <h3 class="publication-title" data-translate="pub3_title">Рекомендації з енергозбереження</h3>
+                        <div class="publication-date" data-translate="pub3_date">Вересень 2024</div>
+                        <p class="publication-description" data-translate="pub3_desc">Практичний посібник з впровадження енергозберігаючих технологій у комунальному господарстві.</p>
+                        <div class="publication-actions">
+                            <button class="publication-preview-btn" data-pdf="publications/energy_guidelines.pdf" data-title="Рекомендації з енергозбереження" data-translate="preview_btn">
+                                <i class="fas fa-eye"></i> Переглянути
+                            </button>
+                            <a href="publications/energy_guidelines.pdf" class="publication-download-btn" download data-translate="download_btn">
+                                <i class="fas fa-download"></i> Завантажити
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Публикация 4 -->
+                <div class="publication-card" data-category="reports">
+                    <div class="publication-thumbnail">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="publication-info">
+                        <h3 class="publication-title" data-translate="pub4_title">Квартальний звіт АВКУ Q3 2024</h3>
+                        <div class="publication-date" data-translate="pub4_date">Серпень 2024</div>
+                        <p class="publication-description" data-translate="pub4_desc">Звіт про діяльність асоціації за третій квартал 2024 року.</p>
+                        <div class="publication-actions">
+                            <button class="publication-preview-btn" data-pdf="publications/quarterly_report_q3.pdf" data-title="Квартальний звіт АВКУ Q3 2024" data-translate="preview_btn">
+                                <i class="fas fa-eye"></i> Переглянути
+                            </button>
+                            <a href="publications/quarterly_report_q3.pdf" class="publication-download-btn" download data-translate="download_btn">
+                                <i class="fas fa-download"></i> Завантажити
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Публикация 5 -->
+                <div class="publication-card" data-category="research">
+                    <div class="publication-thumbnail">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="publication-info">
+                        <h3 class="publication-title" data-translate="pub5_title">Аналіз інноваційних технологій у комунальній сфері</h3>
+                        <div class="publication-date" data-translate="pub5_date">Липень 2024</div>
+                        <p class="publication-description" data-translate="pub5_desc">Огляд сучасних технологій та інновацій, що впроваджуються у комунальному господарстві України.</p>
+                        <div class="publication-actions">
+                            <button class="publication-preview-btn" data-pdf="publications/innovations_analysis.pdf" data-title="Аналіз інноваційних технологій у комунальній сфері" data-translate="preview_btn">
+                                <i class="fas fa-eye"></i> Переглянути
+                            </button>
+                            <a href="publications/innovations_analysis.pdf" class="publication-download-btn" download data-translate="download_btn">
+                                <i class="fas fa-download"></i> Завантажити
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Публикация 6 -->
+                <div class="publication-card" data-category="guidelines">
+                    <div class="publication-thumbnail">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="publication-info">
+                        <h3 class="publication-title" data-translate="pub6_title">Посібник з управління відходами</h3>
+                        <div class="publication-date" data-translate="pub6_date">Червень 2024</div>
+                        <p class="publication-description" data-translate="pub6_desc">Методичні рекомендації щодо організації ефективної системи управління відходами на муніципальному рівні.</p>
+                        <div class="publication-actions">
+                            <button class="publication-preview-btn" data-pdf="publications/waste_management.pdf" data-title="Посібник з управління відходами" data-translate="preview_btn">
+                                <i class="fas fa-eye"></i> Переглянути
+                            </button>
+                            <a href="publications/waste_management.pdf" class="publication-download-btn" download data-translate="download_btn">
+                                <i class="fas fa-download"></i> Завантажити
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+          <p data-translate="footer_text">© 2025 АВКУ. Усі права захищені.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/publications.js"></script>
+</body>
+</html>
