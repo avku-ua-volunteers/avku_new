@@ -134,6 +134,9 @@
     -webkit-text-fill-color: transparent;
   }
   
+
+
+
   .nav-links {
     display: flex;
     gap: 2rem;
@@ -221,6 +224,39 @@
     margin-bottom: 2rem;
     opacity: 0.9;
   }
+
+
+
+  .overview {
+    padding: 45px 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .overview-flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .overview-logo {
+    flex: 0 0 30%; /* Логотип занимает 30% ширины */
+  }
+  
+  .overview-content {
+    flex: 0 0 70%; /* Контент занимает 70% ширины */
+  }
+  
+  .logo {
+    max-width: 70%;
+    height: auto;
+  }
+
+
   
   /* ==========================================
      Кнопки
@@ -1490,3 +1526,5 @@
       width: 100%;
   }
 }
+
+
