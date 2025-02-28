@@ -343,7 +343,7 @@
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
+  position: relative; /* Додано */
   padding-left: 2rem;
 }
 
@@ -379,19 +379,17 @@
 
 .about-section ul li::before {
   content: counter(list-item);
-  position: absolute;
-  top: -20px;
-  left: -20px;
+  display: inline-flex; /* Змінено */
+  align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
   background: linear-gradient(135deg, #007bff, #00c3ff);
   color: white;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-weight: 700;
   font-size: 1.2rem;
+  margin-right: 1rem; /* Додано */
   box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
 
@@ -427,7 +425,6 @@
     top: -30px;
   }
 }
-
 
 
 
