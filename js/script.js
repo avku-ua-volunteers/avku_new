@@ -61,7 +61,8 @@ function applyTranslations(translations) {
   document.querySelectorAll("[data-translate]").forEach(elem => {
     const key = elem.getAttribute("data-translate");
     if (translations[key]) {
-      elem.textContent = translations[key];
+      // Используем innerHTML для поддержки HTML-тегов
+      elem.innerHTML = translations[key];
     }
   });
 }
