@@ -2,11 +2,9 @@
    Переменные и базовые настройки
    ========================================== */
    :root {
-    --primary: #2A5EE8; /* Современный синий */
-    --secondary: #fcff4d; /* Розовый акцент */
-    --dark: #0F172A;
-    --light: #F8FAFC;
-    --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+    --primary: #1E90FF;
+    --secondary: #FFD700;
+    --gradient: linear-gradient(90deg, var(--primary), #FF4500, var(--secondary));
   }
   
   /* Сброс стилей */
