@@ -289,143 +289,124 @@
      Секция "Про нас
      ========================================== */
      
-.about-section {
-  padding: 6rem 0;
-  background: linear-gradient(45deg, #f8f9fa 0%, #ffffff 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.about-section::before {
-  content: '';
-  position: absolute;
-  top: -10%;
-  left: -10%;
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(circle at 50% 50%, rgba(25, 113, 194, 0.05) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.about-section h1 {
-  font-size: 3.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: var(--dark);
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  line-height: 1.1;
-  position: relative;
-  display: inline-block;
-  background: linear-gradient(45deg, #2a2a2a, #4a4a4a);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.about-section h1::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #007bff, #00c3ff);
-  border-radius: 2px;
-}
-
-.about-section p {
-  margin-bottom: 1.5rem;
-  line-height: 1.8;
-  color: #4a4a4a;
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative; /* Додано */
-  padding-left: 2rem;
-}
-
-.about-section p::before {
-  content: '▹';
-  position: absolute;
-  left: 0;
-  color: #007bff;
-  font-size: 1.4rem;
-  top: 0.2em;
-}
-
-.about-section ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 0;
-  margin: 3rem auto;
-  max-width: 1200px;
-  list-style: none;
-}
-
-.about-section ul li {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  counter-increment: list-item;
-  position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.about-section ul li::before {
-  content: counter(list-item);
-  display: inline-flex; /* Змінено */
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, #007bff, #00c3ff);
-  color: white;
-  border-radius: 50%;
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin-right: 1rem; /* Додано */
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-}
-
-.about-section ul li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 768px) {
-  .about-section {
-    padding: 4rem 1.5rem;
-  }
-  
-  .about-section h1 {
-    font-size: 2.5rem;
-  }
-  
-  .about-section p {
-    padding-left: 0;
-  }
-  
-  .about-section p::before {
-    display: none;
-  }
-  
-  .about-section ul {
-    grid-template-columns: 1fr;
-  }
-  
-  .about-section ul li::before {
-    left: 50%;
-    transform: translateX(-50%);
-    top: -30px;
-  }
-}
-
+     .about-section {
+      padding: 6rem 0;
+      background: linear-gradient(45deg, #f8f9fa 0%, #ffffff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .about-section::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
+      background: radial-gradient(circle at 50% 50%, rgba(25, 113, 194, 0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    
+    .about-section h1 {
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--dark);
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      line-height: 1.1;
+      position: relative;
+      display: inline-block;
+      background: linear-gradient(45deg, #2a2a2a, #4a4a4a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .about-section h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #007bff, #00c3ff);
+      border-radius: 2px;
+    }
+    
+    .about-section p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      color: #4a4a4a;
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      padding-left: 2rem;
+    }
+    
+    .about-section p::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: #007bff;
+      font-size: 1.4rem;
+      top: 0.2em;
+    }
+    
+    .about-section ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 0;
+      margin: 3rem auto;
+      max-width: 1200px;
+      list-style: none;
+    }
+    
+    .about-section ul li {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Видалено нумерацію */
+    .about-section ul li::before {
+      content: none; /* Прибираємо нумерацію */
+    }
+    
+    .about-section ul li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .about-section {
+        padding: 4rem 1.5rem;
+      }
+      
+      .about-section h1 {
+        font-size: 2.5rem;
+      }
+      
+      .about-section p {
+        padding-left: 0;
+      }
+      
+      .about-section p::before {
+        display: none;
+      }
+      
+      .about-section ul {
+        grid-template-columns: 1fr;
+      }
+    }
 
 
 
