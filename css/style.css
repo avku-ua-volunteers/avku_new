@@ -16,6 +16,9 @@
     box-sizing: border-box;
   }
   
+
+
+  
   /* Базовая типографика */
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -278,7 +281,7 @@
         box-shadow: 0 8px 24px -4px hsl(0 0% 0% / 0.1);
         background: hsl(0 0% 100% / 0.3);
       }
-      
+       
       &-primary {
         background: white;
         color: var(--btn-primary);
