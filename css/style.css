@@ -1,38 +1,13 @@
 /* ==========================================
    Переменные и базовые настройки
    ========================================== */
-/* Кореневі змінні */
-:root {
-  --primary: #1E90FF; /* Яскравий синій */
-  --secondary: #FFD700; /* Золотистий жовтий */
-  --dark: #0F172A;
-  --light: #F8FAFC;
-  --gradient: linear-gradient(90deg, var(--primary), #FF4500, var(--secondary));
-}
-
-/* Стилі для елемента з градієнтом */
-.element {
-  background: var(--gradient);
-  color: white; /* Для контрасту з яскравим фоном */
-  padding: 20px;
-  text-align: center;
-}
-
-/* Анімація градієнта (опціонально) */
-@keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.animated-gradient {
-  background: var(--gradient);
-  background-size: 200% 200%;
-  animation: gradientAnimation 5s ease infinite;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
+   :root {
+    --primary: #0057B7;
+    --secondary: #FFD700;
+    --dark: #0F172A;
+    --light: #F8FAFC;
+    --gradient: linear-gradient(135deg, #0057B7, #FFD700);
+  }
   
   /* Сброс стилей */
   * {
