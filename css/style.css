@@ -6,7 +6,7 @@
     --secondary: #0099ff;
     --dark: #0F172A;
     --light: #F8FAFC;
-    --gradient: linear-gradient(135deg, #0057B7, #FFD700);
+    --gradient: linear-gradient(135deg, #0057B7, #0099ff);
   }
   
   /* Сброс стилей */
