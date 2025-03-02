@@ -257,7 +257,11 @@
     height: auto;
   }
 
-
+  .hero-slogan {
+    white-space: normal;
+    line-height: 1.5;
+    text-align: center;
+  }
   
   /* ==========================================
      Кнопки
