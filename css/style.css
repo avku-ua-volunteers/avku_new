@@ -2,11 +2,11 @@
    Переменные и базовые настройки
    ========================================== */
    :root {
-    --primary: #0057B7;
-    --secondary: #0099ff;
+    --primary: #2cade5;
+    --secondary: #4d7abc;
     --dark: #0F172A;
     --light: #F8FAFC;
-    --gradient: linear-gradient(135deg, #0057B7, #0099ff);
+    --gradient: linear-gradient(135deg, #2cade5, #4d7abc);
   }
   
   /* Сброс стилей */
