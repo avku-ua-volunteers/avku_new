@@ -300,128 +300,128 @@
   /* ==========================================
      Секция "Про нас
      ========================================== */
-     
-     .about-section {
-      padding: 6rem 0;
-      background: linear-gradient(45deg, #f8f9fa 0%, #ffffff 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .about-section::before {
-      content: '';
-      position: absolute;
-      top: -10%;
-      left: -10%;
-      width: 120%;
-      height: 120%;
-      background: radial-gradient(circle at 50% 50%, rgba(25, 113, 194, 0.05) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    
-    .about-section h1 {
-      font-size: 3.5rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      color: var(--dark);
-      font-weight: 700;
-      letter-spacing: -0.05em;
-      line-height: 1.1;
-      position: relative;
-      display: inline-block;
-      background: linear-gradient(45deg, #2a2a2a, #4a4a4a);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
-    .about-section h1::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, #007bff, #00c3ff);
-      border-radius: 2px;
-    }
-    
-    .about-section p {
-      margin-bottom: 1.5rem;
-      line-height: 1.8;
-      color: #000000;
-      font-size: 1.1rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      position: relative;
-      padding-left: 2rem;
-    }
-    
-    .about-section p::before {
-      content: '▹';
-      position: absolute;
-      left: 0;
-      color: #007bff;
-      font-size: 1.4rem;
-      top: 0.2em;
-    }
-    
-    .about-section ul {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 0;
-      margin: 3rem auto;
-      max-width: 1200px;
-      list-style: none;
-    }
-    
-    .about-section ul li {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-    
-    /* Видалено нумерацію */
-    .about-section ul li::before {
-      content: none; /* Прибираємо нумерацію */
-    }
-    
-    .about-section ul li:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-    }
-    
-    @media (max-width: 768px) {
-      .about-section {
-        padding: 4rem 1.5rem;
-      }
-      
-      .about-section h1 {
-        font-size: 2.5rem;
-      }
-      
-      .about-section p {
-        padding-left: 0;
-      }
-      
-      .about-section p::before {
-        display: none;
-      }
-      
-      .about-section ul {
-        grid-template-columns: 1fr;
-      }
-    }
+.about-section {
+  padding: 8rem 0 6rem; /* Increased top padding */
+  background: linear-gradient(45deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
 
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle at 50% 50%, rgba(25, 113, 194, 0.08) 0%, transparent 70%); /* Enhanced gradient */
+  pointer-events: none;
+}
 
+.about-section h1 {
+  font-size: 3.6rem; /* Slightly larger */
+  margin-bottom: 2.5rem; /* More space below */
+  text-align: center;
+  color: var(--dark);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(45deg, #212121, #4a4a4a); /* Deeper black */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 2px 3px rgba(0,0,0,0.1); /* Subtle shadow */
+}
 
+.about-section h1::after {
+  content: '';
+  position: absolute;
+  bottom: -12px; /* Lower position */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px; /* Wider line */
+  height: 4px;
+  background: linear-gradient(90deg, #0066cc, #00c3ff); /* Adjusted blue gradient */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.about-section p {
+  margin-bottom: 1.8rem; /* More space between paragraphs */
+  line-height: 1.8;
+  color: #333333; /* Softer black for better readability */
+  font-size: 1.15rem; /* Slightly larger text */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.about-section p::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #0066cc; /* Matched to header line color */
+  font-size: 1.4rem;
+  top: 0.2em;
+}
+
+.about-section ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly larger minimum size */
+  gap: 2.2rem; /* More space between items */
+  padding: 0;
+  margin: 3.5rem auto; /* More space around list */
+  max-width: 1200px;
+  list-style: none;
+}
+
+.about-section ul li {
+  background: white;
+  padding: 1.8rem; /* More internal padding */
+  border-radius: 18px; /* Larger radius */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); /* Softer shadow */
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.03); /* Lighter border */
+}
+
+/* Removed numbering */
+.about-section ul li::before {
+  content: none;
+}
+
+.about-section ul li:hover {
+  transform: translateY(-8px); /* More significant hover effect */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 123, 255, 0.1); /* Subtle blue border on hover */
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 5rem 1.8rem; /* More responsive padding */
+  }
+  
+  .about-section h1 {
+    font-size: 2.6rem;
+  }
+  
+  .about-section p {
+    padding-left: 0;
+    font-size: 1.05rem; /* Adjust font size for mobile */
+  }
+  
+  .about-section p::before {
+    display: none;
+  }
+  
+  .about-section ul {
+    grid-template-columns: 1fr;
+    gap: 1.8rem; /* Adjusted gap for mobile */
+  }
+}
 
 
 
