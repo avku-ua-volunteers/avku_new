@@ -38,6 +38,7 @@
   /* ==========================================
      Шапка (Navbar)
      ========================================== */
+
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -52,6 +53,18 @@
     z-index: 1000;
     box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
   }
+
+  /* Добавьте это для основного контента */
+  body {
+    /* Добавляем отступ сверху равный высоте навбара плюс небольшой запас */
+    padding-top: calc(1rem + 1rem + 1.5rem); /* padding-top + padding-bottom + запас */
+    margin: 0;
+  }
+
+/* Альтернативно, если у вас есть контейнер для основного содержимого */
+.main-content {
+  margin-top: calc(1rem + 1rem + 1.5rem); /* То же значение */
+}
   
 /* ==========================================
    Кнопки перевода
@@ -385,13 +398,16 @@
   /* ==========================================
      Секция "Про нас
      ========================================== */
+/* Если предыдущее решение не работает, можно использовать отрицательный margin */
 .about-section {
-  padding: 8rem 0 6rem; /* Increased top padding */
+  padding: 8rem 0 6rem;
+  margin-top: -3.5rem; /* Отрицательный margin для компенсации глобального отступа */
+  /* Увеличьте верхний padding чтобы компенсировать отрицательный margin */
+  padding-top: calc(8rem + 3.5rem);
   background: linear-gradient(45deg, #f8f9fa 0%, #ffffff 100%);
   position: relative;
   overflow: hidden;
 }
-
 .about-section::before {
   content: '';
   position: absolute;
@@ -399,7 +415,7 @@
   left: -10%;
   width: 120%;
   height: 120%;
-  background: radial-gradient(circle at 50% 50%, rgba(25, 113, 194, 0.08) 0%, transparent 70%); /* Enhanced gradient */
+  background: radial-gradient(circle at 50% 50%, rgba(25, 113, 194, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
