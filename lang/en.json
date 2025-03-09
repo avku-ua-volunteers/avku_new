@@ -35,7 +35,10 @@
     "about_list_4": "<strong>NGO \"INSTITUTE OF FORMATION AND DEVELOPMENT OF CIVIL SOCIETY \"DIGITAL VECH\"</strong>",
 
     "gallery_header": "Our gallery",
-
+    "galleryfilter_general": "General",
+    "galleryfilter_VolunteerTeamsAVKU":"Volunteer teams AVTU",
+    "galleryfilter_photoReports": "Photo reports",
+    "galleryfilter_activities": "Activities",
 
     "events_header": "Category",
     "events_filters1": "All",

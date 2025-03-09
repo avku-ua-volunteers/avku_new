@@ -39,11 +39,17 @@
 
 
     "gallery_header": "Наша галерея",
-    "general": "General",
-    "Volunteer team": "Volunteer team",
-
-
+    "galleryfilter_general": "Загальна",
+    "galleryfilter_VolunteerTeamsAVKU":"Волонтерські команди АВКУ",
+    "galleryfilter_photoReports": "Фото звіти",
+    "galleryfilter_activities": "Заходи",
     
+
+
+
+
+
+
     "events_header": "Категорія",
     "events_filters1": "Всі",
     "events_filters2": "Гуманітарна допомога",
