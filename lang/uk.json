@@ -59,6 +59,23 @@
     "events_filters4": "Реабілітація",
 
 
+
+
+
+
+
+
+  "contact_title": "Зв'яжіться з нами",
+  "phones_title": "Телефони",
+  "address_title": "Адреса",
+  "address_text": "м. Київ,вул. Зодчих, 58-a, 03170",
+  "email_label": "Ваш Email",
+  "name_label": "Ваше ім'я",
+  "message_label": "Повідомлення",
+  "send_button": "Відправити",
+
+
+
     "footer_text": "© 2025 АВКУ. Всі права захищені."
     
   }

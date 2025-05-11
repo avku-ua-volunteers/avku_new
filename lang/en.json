@@ -50,6 +50,22 @@
     "events_filters3": "Activities",
     "events_filters4": "Rehabilitation",
 
+
+
+
+
+
+
+
+  "contact_title": "Contact Us",
+  "phones_title": "Phones",
+  "address_title": "Address",
+  "address_text": "Kyiv, Zodchikh St, 58-a, 03170",
+  "email_label": "Your Email",
+  "name_label": "Your Name",
+  "message_label": "Message",
+  "send_button": "Send",
+
     "footer_text": "© 2025 AVTU. All rights reserved."
   }
   
