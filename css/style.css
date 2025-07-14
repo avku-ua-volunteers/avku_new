@@ -1,69 +1,64 @@
 /* ==========================================
    Переменные и базовые настройки
    ========================================== */
-   :root {
-    --primary: #2cade5;
-    --secondary: #4d7abc;
-    --dark: #0F172A;
-    --light: #F8FAFC;
-    --gradient: linear-gradient(135deg, #2cade5, #4d7abc);
-  }
+:root {
+  --primary: #2cade5;
+  --secondary: #4d7abc;
+  --dark: #0F172A;
+  --light: #F8FAFC;
+  --gradient: linear-gradient(135deg, #2cade5, #4d7abc);
   
-  /* Сброс стилей */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+  --navbar-height: 5rem; 
+}
 
 
-  
-  /* Базовая типографика */
-  body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: var(--light);
-    color: var(--dark);
-    line-height: 1.7;
-  }
-  
-  /* Контейнер */
-  .container {
-    width: 90%;
-    max-width: 80rem; /* 1280px */
-    margin: 0 auto;
-    padding: 2rem 0;
-  }
-  
-  /* ==========================================
-     Шапка (Navbar)
-     ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.8);
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-    padding: 1rem 2rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
-  }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.7;
+}
 
-  /* Добавьте это для основного контента */
-  body {
-    /* Добавляем отступ сверху равный высоте навбара плюс небольшой запас */
-    padding-top: calc(1rem + 1rem + 1.5rem); /* padding-top + padding-bottom + запас */
-    margin: 0;
-  }
+/* Контейнер */
+.container {
+  width: 90%;
+  max-width: 80rem; /* 1280px */
+  margin: 0 auto;
+  padding: 2rem 0;
+}
 
-/* Альтернативно, если у вас есть контейнер для основного содержимого */
+/* ==========================================
+   Шапка (Navbar)
+   ========================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem; 
+  
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0; 
+  z-index: 1000;
+  
+  min-height: var(--navbar-height);
+  
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Префикс для Safari */
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+
 .main-content {
-  margin-top: calc(1rem + 1rem + 1.5rem); /* То же значение */
+  margin-top: var(--navbar-height);
 }
   
 /* ==========================================
