@@ -484,7 +484,9 @@
   padding: 1.8rem; /* More internal padding */
   border-radius: 18px; /* Larger radius */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); /* Softer shadow */
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.03); /* Lighter border */
 }
@@ -602,18 +604,18 @@
     100% { transform: scale(1); }
   }
   
-  /* Применение анимации */
-  .hero-content > * {
-    animation: fadeIn 0.8s ease forwards;
-  }
-  
-  .social-links {
+/* Применение анимации */
+ .hero-content > *,
+ .social-links {
+   animation: fadeIn 0.8s ease forwards;
+ }
+
+ .social-links {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
     margin-bottom: 2rem;
-    animation: fadeIn 0.8s ease forwards;
-  }
+ }
   
   /* ==========================================
      Социальные сети
