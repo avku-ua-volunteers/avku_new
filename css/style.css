@@ -27,12 +27,19 @@ body {
 
 /* Контейнер */
 .container {
-  width: 90%;
-  max-width: 80rem; /* 1280px */
+  width: 95%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem 1 rem;
 }
-
+.content-section {
+  background-color: #ffffff; /* Белый фон для секции */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 16px; /* Скругленные углы */
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08); /* Мягкая тень */
+  padding: 3rem 0;
+}
 /* ==========================================
    Шапка (Navbar)
    ========================================== */
@@ -238,7 +245,7 @@ body {
   }
   
   .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 15px;
   }
