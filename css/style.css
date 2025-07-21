@@ -9,6 +9,9 @@
   --gradient: linear-gradient(135deg, #2cade5, #4d7abc);
   
   --navbar-height: 5rem; 
+
+  --btn-primary: var(--secondary);
+  --btn-accent: var  color: rgb(255, 217, 0);
 }
 
 
@@ -30,7 +33,7 @@ body {
   width: 95%;
   max-width: 1600px;
   margin: 0 auto;
-  padding: 2rem 1 rem;
+  padding: 2rem 1rem; 
 }
 .content-section {
   background-color: #ffffff; /* Белый фон для секции */
@@ -148,8 +151,8 @@ body {
     background: var(--gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-decoration: none;
   }
-  
 
 
   .nav-links {
@@ -244,11 +247,7 @@ body {
     padding: 45px 0;
   }
   
-  .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
+
   
   .overview-flex {
     display: flex;
@@ -591,10 +590,13 @@ footer .container {
 
 .social-links {
   display: flex;
-  gap: 1.5rem;
   justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem; /* Добавлено из второго блока */
   flex-wrap: wrap;
   padding: 0;
+  list-style: none; /* Хорошая практика для сброса стилей списка */
+  animation: fadeIn 0.8s ease forwards; /* Анимация тоже здесь */
 }
 
 .social-links a {
@@ -782,13 +784,6 @@ footer p::before {
  .hero-content > *,
  .social-links {
    animation: fadeIn 0.8s ease forwards;
- }
-
- .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
  }
   
   /* ==========================================
@@ -1371,7 +1366,6 @@ footer p::before {
   opacity: 0.5;
   cursor: not-allowed;
 }
-
 
 
   /* Стили страницы мероприятий */
