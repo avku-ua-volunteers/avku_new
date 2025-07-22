@@ -1,7 +1,6 @@
 // api/server.js
 
-// Импортируем модуль для отправки запросов
-const fetch = require('node-fetch');
+// ❗️ Мы убрали "const fetch = require('node-fetch');" сверху
 
 // Экспортируем функцию-обработчик, которую Vercel будет запускать
 module.exports = async (req, res) => {
@@ -19,7 +18,7 @@ module.exports = async (req, res) => {
     if (req.method !== 'POST') {
         return res.status(405).json({ success: false, error: 'Method Not Allowed' });
     }
-
+    
     // 🔐 Получаем секретные ключи из переменных окружения Vercel
     const { TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } = process.env;
 
@@ -36,7 +35,7 @@ module.exports = async (req, res) => {
 
     // URL для отправки запроса к Telegram API
     const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-
+    
     const options = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -48,6 +47,9 @@ module.exports = async (req, res) => {
     };
 
     try {
+        // ✅ Динамически импортируем node-fetch прямо перед использованием
+        const fetch = (await import('node-fetch')).default;
+
         const response = await fetch(url, options);
         const data = await response.json();
 
@@ -57,6 +59,7 @@ module.exports = async (req, res) => {
             res.status(500).json({ success: false, error: 'Ошибка при отправке в Telegram.' });
         }
     } catch (error) {
+        console.error(error); // Добавим логгирование ошибки для отладки
         res.status(500).json({ success: false, error: 'Внутренняя ошибка сервера.' });
     }
 };
