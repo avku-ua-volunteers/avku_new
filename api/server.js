@@ -54,12 +54,12 @@ module.exports = async (req, res) => {
         const data = await response.json();
 
         if (data.ok) {
-            res.status(200).json({ success: true, message: 'Сообщение успешно отправлено!' });
+            res.status(200).json({ success: true, message: 'Повідомлення успішно надіслано!' });
         } else {
-            res.status(500).json({ success: false, error: 'Ошибка при отправке в Telegram.' });
+            res.status(500).json({ success: false, error: 'Помилка при відправці в Telegram.' });
         }
     } catch (error) {
         console.error(error); // Добавим логгирование ошибки для отладки
-        res.status(500).json({ success: false, error: 'Внутренняя ошибка сервера.' });
+        res.status(500).json({ success: false, error: 'Внутрішня помилка сервера.' });
     }
 };
