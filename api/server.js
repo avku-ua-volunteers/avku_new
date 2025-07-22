@@ -31,7 +31,7 @@ module.exports = async (req, res) => {
     }
 
     // Формируем текст сообщения для Telegram
-    const text = `🔔 *Нове повідомлення з сайту!* 🔔\n\n*Ім'я:* ${name}\n*Email:* ${email}\n*Сообщение:*\n${message}`;
+    const text = `Нове повідомлення з сайту! \n\n*Ім'я:* ${name}\n*Email:* ${email}\n*Сообщение:*\n${message}`;
 
     // URL для отправки запроса к Telegram API
     const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
