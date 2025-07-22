@@ -27,11 +27,11 @@ module.exports = async (req, res) => {
 
     // Проверяем, что все данные пришли
     if (!name || !email || !message) {
-        return res.status(400).json({ success: false, error: 'Все поля обязательны для заполнения' });
+        return res.status(400).json({ success: false, error: 'Всі поля є обовʼязковими для заповнення' });
     }
 
     // Формируем текст сообщения для Telegram
-    const text = `🔔 *Новое сообщение с сайта!* 🔔\n\n*Имя:* ${name}\n*Email:* ${email}\n*Сообщение:*\n${message}`;
+    const text = `🔔 *Нове повідомлення з сайту!* 🔔\n\n*Ім'я:* ${name}\n*Email:* ${email}\n*Сообщение:*\n${message}`;
 
     // URL для отправки запроса к Telegram API
     const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
@@ -41,8 +41,7 @@ module.exports = async (req, res) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             chat_id: TELEGRAM_CHAT_ID,
-            text: text,
-            parse_mode: 'Markdown'
+            text: text
         })
     };
 
