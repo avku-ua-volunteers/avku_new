@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // ❗️ Вставьте сюда URL, который вам предоставил Vercel
         const VERCEL_URL = 'https://avku-6o1u.vercel.app/api/server';
 
-        statusMessage.textContent = 'Отправка...';
+        statusMessage.textContent = 'Надсилання...';
         statusMessage.style.color = 'blue';
 
         const formData = {
@@ -35,15 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const result = await response.json();
 
             if (result.success) {
-                statusMessage.textContent = 'Сообщение успешно отправлено!';
+                statusMessage.textContent = 'Повідомлення успішно надіслано!';
                 statusMessage.style.color = 'green';
                 contactForm.reset();
             } else {
-                statusMessage.textContent = `Ошибка: ${result.error || 'Не удалось отправить.'}`;
+                statusMessage.textContent = `Помилка: ${result.error || 'Не вдалось відправити.'}`;
                 statusMessage.style.color = 'red';
             }
         } catch (error) {
-            statusMessage.textContent = 'Ошибка сети. Попробуйте позже.';
+            statusMessage.textContent = 'Помилка мережі. Спробуйте пізніше.';
             statusMessage.style.color = 'red';
         }
     });
