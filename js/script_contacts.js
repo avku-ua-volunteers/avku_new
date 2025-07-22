@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
 
         // ❗️ Вставьте сюда URL, который вам предоставил Vercel
-       const VERCEL_URL = 'https://avku-6o1u.vercel.app/api/server';
+       const VERCEL_URL = 'https://avku-6o1u-4245877s-projects.vercel.app/';
 
         statusMessage.textContent = 'Отправка...';
         statusMessage.style.color = 'blue';
