@@ -406,7 +406,7 @@ strong {
   /* ==========================================
      Секция "Про нас
      ========================================== */
-/* Если предыдущее решение не работает, можно использовать отрицательный margin */
+
 .about-section {
   padding: 8rem 0 6rem;
   margin-top: -3.5rem; /* Отрицательный margin для компенсации глобального отступа */
@@ -517,6 +517,7 @@ transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
   
   .about-section h1 {
     font-size: 2.6rem;
+    padding-top: 4rem;
   }
   
   .about-section p {
