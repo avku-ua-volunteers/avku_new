@@ -94,7 +94,7 @@ function applyTranslations(translations) {
  * =================================================================
  */
 // Конфигурация
-const itemsPerPage = 9; // Количество фото на странице
+const itemsPerPage = 16; // Количество фото на странице
 let currentPage = 1;
 let totalPages = 1;
 let activeFilter = 'all';

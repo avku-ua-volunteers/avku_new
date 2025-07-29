@@ -41,13 +41,12 @@
    <!-- Основной контент -->
    <main class="gallery-page">
     <section class="gallery-section">
-        <div class="container">
+        <div class="container gallery-container"> 
             <h1 class="section-title" data-translate="gallery_header">Наша галерея</h1>
             
-            <!-- Фильтры -->
             <div class="gallery-filters">
-                <button class="btn btn-filter" data-filter="all" data-translate="galleryfilter_general">Загальна</button>
-                <button class="btn btn-filter" data-filter="all" data-translate="galleryfilter_VolunteerTeamsAVKU">Волонтерські команди АВКУ</button>
+                <button class="btn btn-filter active" data-filter="all" data-translate="galleryfilter_general">Загальна</button>
+                <button class="btn btn-filter" data-filter="volunteers" data-translate="galleryfilter_VolunteerTeamsAVKU">Волонтерські команди АВКУ</button>
                 <button class="btn btn-filter" data-filter="events" data-translate="galleryfilter_activities">Заходи</button>
                 <button class="btn btn-filter" data-filter="students" data-translate="galleryfilter_photoReports">Фото звіти</button>
             </div>
@@ -1878,27 +1877,21 @@
                         <figcaption class="gallery-caption">Фото-звіт 2024</figcaption>
                     </figure>
                 </div>
-                <!-- Добавьте больше изображений по аналогии -->
+
             </div>
-        </div>
-
-        <!-- В разделе галереи обновляем grid и добавляем пагинацию -->
-         <div class="gallery-grid" id="galleryGrid"></div>
-
-                <!-- Пагинация -->
-          <div class="pagination" id="pagination">
-          <div class="pagination-inner"></div>
-        </div>
+                <div class="pagination" id="pagination">
+        <div class="pagination-inner"></div>
+         
+    </div>
     </section>
 
-    <!-- Модальное окно -->
     <div class="gallery-modal">
-        <span class="modal-close">&times;</span>
+        <span class="modal-close">×</span>
         <img class="modal-content" id="modal-image">
         <div class="modal-caption"></div>
     </div>
-</main>
     </main>
+
       <footer>
     <div class="container">
       <div class="social-links">
